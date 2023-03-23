@@ -17,7 +17,7 @@ public class Intervention {
     private String interHeureAppel;
     private String interHeureArrive;
     private String interDuree;
-    private ArrayList<Situation>Situations;
+    private Situation Situation;
     public Intervention() {
     }
     
@@ -30,14 +30,15 @@ public class Intervention {
         this.interDuree = interDuree;
     }
 
-    public ArrayList<Situation> getSituations() {
-        return Situations;
+    public Situation getSituation() {
+        return Situation;
     }
 
-    public void setSituations(ArrayList<Situation> Situations) {
-        this.Situations = Situations;
+    public void setSituation(Situation Situation) {
+        this.Situation = Situation;
     }
-    
+
+
     
     
     public int getInterId() {
@@ -87,10 +88,5 @@ public class Intervention {
     public void setInterDuree(String interDuree) {
         this.interDuree = interDuree;
     }
-            public void addUnSituation (Situation pUneSituation){
-            if (Situations == null){
-                Situations = new ArrayList<Situation>();
-            }
-            Situations.add(pUneSituation);
-    }
+
 }
