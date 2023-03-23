@@ -8,6 +8,19 @@ package modele;
  *
  * @author louna.constantinescu
  */
-public class Volontaire {
+public class Volontaire extends Pompier{
     
+    private Profession profession; 
+
+    public Volontaire() {
+        super();
+    }
+
+    public Profession getProfession() {
+        return profession;
+    }
+
+    public void setProfession(Profession profession) {
+        this.profession = profession;
+    }
 }

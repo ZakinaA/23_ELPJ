@@ -4,6 +4,8 @@
  */
 package modele;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author louna.constantinescu
@@ -13,19 +15,20 @@ public class Pompier {
     private int id;
     private String nom;
     private String prenom;
-    private String DateNaissance;
+    private String dateNaissance;
     private int numeroBip;
     private Grade grade;
+    private ArrayList<Fonction> lesFonction;
 
     public Pompier() {
     }
 
     
-    public Pompier(int id, String nom, String prenom, String DateNaissance, int numeroBip) {
+    public Pompier(int id, String nom, String prenom, String dateNaissance, int numeroBip) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
-        this.DateNaissance = DateNaissance;
+        this.dateNaissance = dateNaissance;
         this.numeroBip = numeroBip;
     }
 
@@ -63,11 +66,11 @@ public class Pompier {
     }
 
     public String getDateNaissance() {
-        return DateNaissance;
+        return dateNaissance;
     }
 
-    public void setDateNaissance(String DateNaissance) {
-        this.DateNaissance = DateNaissance;
+    public void setDateNaissance(String dateNaissance) {
+        this.dateNaissance = dateNaissance;
     }
 
     public int getNumeroBip() {
@@ -77,4 +80,12 @@ public class Pompier {
     public void setNumeroBip(int numeroBip) {
         this.numeroBip = numeroBip;
     }
+     public void addUneFonction(Fonction pUneFonction)
+ 	{
+ 		if (lesFonction == null)
+ 	{
+ 		lesFonction = new ArrayList<Fonction>();
+ 	}
+ 		lesFonction.add(pUneFonction);
+ 	}
 }

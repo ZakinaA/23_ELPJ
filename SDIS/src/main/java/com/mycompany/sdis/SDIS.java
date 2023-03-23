@@ -5,6 +5,9 @@
 
 package com.mycompany.sdis;
 
+import modele.Pompier;
+import modele.Profession;
+
 /**
  *
  * @author paul.cuquemelle
@@ -12,6 +15,6 @@ package com.mycompany.sdis;
 public class SDIS {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+
     }
 }
