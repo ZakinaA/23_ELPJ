@@ -15,6 +15,6 @@ import modele.Profession;
 public class SDIS {
 
     public static void main(String[] args) {
-
+        
     }
 }
