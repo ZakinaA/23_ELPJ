@@ -14,6 +14,8 @@ public class Engin {
     private int enginId;
     private String enginNom;
     private ArrayList<Situation>Situations;
+    private Caserne Caserne;
+    private TypeEngin TypeEngin;
     public Engin() {
     }
 
@@ -22,8 +24,24 @@ public class Engin {
         this.enginNom = enginNom;
     }
 
+    public TypeEngin getTypeEngin() {
+        return TypeEngin;
+    }
+
+    public void setTypeEngin(TypeEngin TypeEngin) {
+        this.TypeEngin = TypeEngin;
+    }
+
     public ArrayList<Situation> getSituations() {
         return Situations;
+    }
+
+    public Caserne getCaserne() {
+        return Caserne;
+    }
+
+    public void setCaserne(Caserne Caserne) {
+        this.Caserne = Caserne;
     }
 
     public int getEnginId() {
