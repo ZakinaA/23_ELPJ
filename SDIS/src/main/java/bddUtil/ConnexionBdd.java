@@ -24,15 +24,15 @@ public class ConnexionBdd{
     // Méthode de création et d'ouverture de la connexion
     public static Connection ouvrirConnexion(){
         try {
-              Class.forName("org.mysql.jdbc.Driver");
-            System.out.println("Pilote MYSQL JDBC chargé");
+              Class.forName("org.mariadb.jdbc.Driver");
+            System.out.println("Pilote MARIADB JDBC chargé");
             //Class.forName("com.mysql.jdbc.Driver");                  
         } catch (ClassNotFoundException e) {
             e.printStackTrace();         
         }     
         try {
             //obtention de la connexion
-            connection= DriverManager.getConnection("jdbc:mySQL://172.20.177.77/23ELPJ","ADM_ELPJ","mpElpj");
+            connection= DriverManager.getConnection("jdbc:mariadb://172.20.177.77/23ELPJ","ADM_ELPJ","mpElpj");
             System.out.println("Connexion OK");
            
         } catch (SQLException e) {
