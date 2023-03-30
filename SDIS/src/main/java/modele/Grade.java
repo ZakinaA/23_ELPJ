@@ -12,14 +12,14 @@ import java.util.ArrayList;
  */
 public class Grade {
     
-    private int code;
+    private String code;
     private String libelle;
     private ArrayList<Pompier> lesPompiers;
 
     public Grade() {
     }
 
-    public Grade(int code, String libelle) {
+    public Grade(String code, String libelle) {
         this.code = code;
         this.libelle = libelle;
     }
@@ -34,11 +34,11 @@ public class Grade {
     
     
 
-    public int getCode() {
+    public String getCode() {
         return code;
     }
 
-    public void setCode(int code) {
+    public void setCode(String code) {
         this.code = code;
     }
 
