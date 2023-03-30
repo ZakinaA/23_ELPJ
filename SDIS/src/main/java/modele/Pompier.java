@@ -19,6 +19,8 @@ public class Pompier {
     private int numeroBip;
     private Grade grade;
     private ArrayList<Fonction> lesFonction;
+    private ArrayList<Intervention> lesIntervention;
+    public Caserne Caserne;
 
     public Pompier() {
     }
@@ -30,6 +32,30 @@ public class Pompier {
         this.prenom = prenom;
         this.dateNaissance = dateNaissance;
         this.numeroBip = numeroBip;
+    }
+
+    public Caserne getCaserne() {
+        return Caserne;
+    }
+
+    public void setCaserne(Caserne Caserne) {
+        this.Caserne = Caserne;
+    }
+    
+    public ArrayList<Fonction> getLesFonction() {
+        return lesFonction;
+    }
+
+    public void setLesFonction(ArrayList<Fonction> lesFonction) {
+        this.lesFonction = lesFonction;
+    }
+
+    public ArrayList<Intervention> getLesIntervention() {
+        return lesIntervention;
+    }
+
+    public void setLesIntervention(ArrayList<Intervention> lesIntervention) {
+        this.lesIntervention = lesIntervention;
     }
 
     public Grade getGrade() {
@@ -87,5 +113,14 @@ public class Pompier {
  		lesFonction = new ArrayList<Fonction>();
  	}
  		lesFonction.add(pUneFonction);
+ 	}
+     
+      public void addUneIntervention(Intervention pUneIntervention)
+ 	{
+ 		if (lesIntervention == null)
+ 	{
+ 		lesIntervention = new ArrayList<Intervention>();
+ 	}
+ 		lesIntervention.add(pUneIntervention);
  	}
 }
