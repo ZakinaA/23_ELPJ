@@ -5,6 +5,8 @@
 
 package com.mycompany.sdis;
 
+import bddUtil.ConnexionBdd;
+import java.sql.Connection;
 import modele.Pompier;
 import modele.Profession;
 
@@ -15,6 +17,7 @@ import modele.Profession;
 public class SDIS {
 
     public static void main(String[] args) {
+        Connection  con=ConnexionBdd.ouvrirConnexion();
         
     }
 }
