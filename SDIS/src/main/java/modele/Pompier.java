@@ -18,6 +18,8 @@ public class Pompier {
     private String dateNaissance;
     private int numeroBip;
     private Grade grade;
+    private String username;
+    private String mdp;
     private ArrayList<Fonction> lesFonction;
     private ArrayList<Intervention> lesIntervention;
     public Caserne Caserne;
@@ -26,12 +28,30 @@ public class Pompier {
     }
 
     
-    public Pompier(int id, String nom, String prenom, String dateNaissance, int numeroBip) {
+    public Pompier(int id, String nom, String prenom, String dateNaissance, int numeroBip, String username, String mdp) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
         this.dateNaissance = dateNaissance;
         this.numeroBip = numeroBip;
+        this.username = username;
+        this.mdp= mdp;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getMdp() {
+        return mdp;
+    }
+
+    public void setMdp(String mdp) {
+        this.mdp = mdp;
     }
 
     public Caserne getCaserne() {
