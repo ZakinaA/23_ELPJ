@@ -18,6 +18,8 @@ public class Intervention {
     private String interHeureArrive;
     private String interDuree;
     private Situation Situation;
+    private Pompier lePompier;
+    
     public Intervention() {
     }
     
@@ -38,8 +40,13 @@ public class Intervention {
         this.Situation = Situation;
     }
 
+    public Pompier getLePompier() {
+        return lePompier;
+    }
 
-    
+    public void setLePompier(Pompier lePompier) {
+        this.lePompier = lePompier;
+    }
     
     public int getInterId() {
         return interId;

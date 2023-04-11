@@ -8,8 +8,10 @@ package com.mycompany.sdis;
 import bddUtil.ConnexionBdd;
 import java.sql.Connection;
 import java.util.ArrayList;
+import modele.Intervention;
 import modele.Pompier;
 import modele.Profession;
+
 
 /**
  *
@@ -23,6 +25,8 @@ public class SDIS {
         Pompier p1 = DAO.PompierDAO.getPompierByID(con, 1);
         
         System.out.println("Nom: " + p1.getNom() + " prenom: "+ p1.getPrenom() + " " + p1.getCaserne().getCasNom() +" " + p1.getGrade().getLibelle() + " " + p1.getCaserne().getCasVille());
+        
+
         
     }
     

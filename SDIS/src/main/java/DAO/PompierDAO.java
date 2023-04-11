@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import modele.Caserne;
 import modele.Grade;
+import modele.Intervention;
 import modele.Pompier;
 
 /**
@@ -57,28 +58,34 @@ public class PompierDAO {
         }
         return pom;
     }
-    /*
-    public static ArrayList<Pompier> getLesPompier(Connection connection, int idPompier){
-    ArrayList<Pompier> lesPompier = new ArrayList<Pompier>();
+    
+    public static ArrayList<Intervention> getMesIntervention(Connection connection,int idPompier){
+    ArrayList<Intervention> mesIntervention = new ArrayList<Intervention>();
     try
     {
-        requete=connection.prepareStatement("SELECT * FROM POMPIER, GRADE WHERE gra_code = pom_code_occupe AND pom_id=?;");
+        requete=connection.prepareStatement("SELECT * FROM INTERVENTION, POMPIER, INTERVIENT WHERE  int_id=IN_ID_1 AND IN_ID=POM_ID  AND pom_id= ?");
         requete.setInt(1,idPompier);
+        
+        
+        System.out.println("requete="+ requete);
         rs=requete.executeQuery();
         while (rs.next()){
             
             Pompier unPompier = new Pompier();
             unPompier.setId(rs.getInt("pom_id"));
-            unPompier.setNom(rs.getString("pom_NOM"));
-            unPompier.setPrenom(rs.getString("pom_Prenom"));
-            unPompier.setDateNaissance(rs.getString("pom_DATENAISSANCE"));
-
-            Grade unGrade = new Grade();
-            unGrade.setCode(rs.getInt("gra_code"));
-            unGrade.setLibelle(rs.getString("gra_libelle"));
             
-            unPompier.setGrade(unGrade);
-            lesPompier.add(unPompier);
+            Intervention uneIntervention = new Intervention();
+            uneIntervention.setInterId(rs.getInt("INT_ID"));
+            uneIntervention.setInterDate(rs.getString("INT_DATE"));
+            uneIntervention.setInterLieu(rs.getString("INT_LIEU"));
+            uneIntervention.setInterHeureAppel(rs.getString("INT_HEUREAPPEL"));
+            uneIntervention.setInterHeureArrive(rs.getString("INT_HEUREARRIVE"));
+            uneIntervention.setInterDuree(rs.getString("INT_DUREE"));
+            
+            
+            uneIntervention.setLePompier(unPompier);
+            mesIntervention.add(uneIntervention); 
+            
             
         }
         ConnexionBdd.fermerConnexion(rs);
@@ -88,7 +95,7 @@ public class PompierDAO {
         {
             e.printStackTrace();
         }
-        return lesPompier;
-    }
-*/
+        return mesIntervention;
+     }
+  
 }
