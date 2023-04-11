@@ -23,7 +23,7 @@ public class SDIS {
         Pompier p1 = DAO.PompierDAO.getPompierByID(con, 1);
         
         System.out.println("Nom: " + p1.getNom() + " prenom: "+ p1.getPrenom() + " " + p1.getCaserne().getCasNom() +" " + p1.getGrade().getLibelle() + " " + p1.getCaserne().getCasVille());
-         
+        
     }
     
     
