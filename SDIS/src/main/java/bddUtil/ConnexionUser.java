@@ -45,19 +45,21 @@ public class ConnexionUser {
                 String storedPassword = resultSet.getString("POM_mdp");
                 if (inputPassword.equals(storedPassword)) {
                     System.out.println("Authentification réussie !");
+                    
                 } else {
                     System.out.println("Mot de passe incorrect !");
                 }
             } else {
                 System.out.println("Nom d'utilisateur incorrect !");
             }
-
+                resultSet.close();
+            
             // Fermer la connexion, le PreparedStatement et le ResultSet
-            resultSet.close();
             statement.close();
             connection.close();
         } catch (SQLException e) {
             System.err.println("Erreur lors de la connexion à la base de données : " + e.getMessage());
         }
+
     }
 }

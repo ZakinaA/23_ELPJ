@@ -6,6 +6,7 @@ package vues;
 
 import bddUtil.ConnexionBdd;
 import java.sql.Connection;
+import modele.Pompier;
 
 
 /**
@@ -127,15 +128,12 @@ public class Frm_ConnexionUser extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        
-        //1. recup des champs login / mdp
 
+        Pompier p = DAO.ConnexionUserDAO.getLogin(cnx, jlbl_Username.getText(), jlbl_mdp.getText());
         
-        //2. appel Dao avce les paramètres connection/login/mdp
-        if (DAO.ConnexionUserDAO.GetLogin(cnx, jlbl_Username.getText(), jlbl_mdp.getText())){
+        if (p != null){
             setVisible(false);
-            Frm_accueils frm_accueils = new Frm_accueils();
+            Frm_accueils frm_accueils = new Frm_accueils(p);
             frm_accueils.setVisible(true);
         }else{
             jlbl_error.setText("Problemes sur les identifiants");

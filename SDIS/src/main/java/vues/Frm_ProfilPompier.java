@@ -20,10 +20,10 @@ public class Frm_ProfilPompier extends javax.swing.JFrame {
     /**
      * Creates new form Frm_ProfilPompier
      */
-    public Frm_ProfilPompier() {
+    public Frm_ProfilPompier(Pompier unPompier) {
         initComponents();
         cnt = ConnexionBdd.ouvrirConnexion();
-        Pompier p1 = DAO.PompierDAO.getPompierByID(cnt, 1);
+        Pompier p1 = DAO.PompierDAO.getPompierByID(cnt, unPompier.getId());
         
         //System.out.println("Nom: " + p1.getNom() + " prenom: "+ p1.getPrenom() + " " + p1.getCaserne().getCasNom() +" " + p1.getGrade().getLibelle());
         jlbl_pomNom.setText(p1.getNom());
@@ -37,7 +37,24 @@ public class Frm_ProfilPompier extends javax.swing.JFrame {
         
         
     }
-
+    public Frm_ProfilPompier() {
+        /*initComponents();
+        cnt = ConnexionBdd.ouvrirConnexion();
+        Pompier p1 = DAO.PompierDAO.getPompierByID(cnt, 1);
+        
+        //System.out.println("Nom: " + p1.getNom() + " prenom: "+ p1.getPrenom() + " " + p1.getCaserne().getCasNom() +" " + p1.getGrade().getLibelle());
+        jlbl_pomNom.setText(p1.getNom());
+        jlbl_pomPrenom.setText(p1.getPrenom());
+        jlbl_pomDate.setText(p1.getDateNaissance());
+        jlbl_pomGrade.setText(p1.getGrade().getLibelle());
+        jlbl_casNom.setText(p1.getCaserne().getCasNom());
+        jlbl_casAdresse.setText(p1.getCaserne().getCasAdrs());
+        jlbl_casVille.setText(p1.getCaserne().getCasVille());
+        jlbl_casCP.setText(p1.getCaserne().getCasCP());
+        */
+        
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
