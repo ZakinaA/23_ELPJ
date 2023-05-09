@@ -39,6 +39,7 @@ public class ConnexionUserDAO {
                 unPompier.setNom(rs.getString("POM_NOM"));
                 unPompier.setPrenom(rs.getString("POM_Prenom"));
                 unPompier.setDateNaissance(rs.getString("POM_DATENAISSANCE"));
+                unPompier.setRole(rs.getString("POM_role"));
 
                 Caserne uneCaserne= new Caserne();
                 uneCaserne.setCasNom(rs.getString("CAS_NOM"));

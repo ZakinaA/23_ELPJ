@@ -20,6 +20,7 @@ public class Pompier {
     private Grade grade;
     private String username;
     private String mdp;
+    private String role;
     private ArrayList<Fonction> lesFonction;
     private ArrayList<Intervention> lesIntervention;
     public Caserne Caserne;
@@ -28,7 +29,7 @@ public class Pompier {
     }
 
     
-    public Pompier(int id, String nom, String prenom, String dateNaissance, int numeroBip, String username, String mdp) {
+    public Pompier(int id, String nom, String prenom, String dateNaissance, int numeroBip, String username, String mdp, String role) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -36,6 +37,15 @@ public class Pompier {
         this.numeroBip = numeroBip;
         this.username = username;
         this.mdp= mdp;
+        this.role = role;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getUsername() {

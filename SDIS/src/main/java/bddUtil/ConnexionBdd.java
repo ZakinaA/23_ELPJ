@@ -32,7 +32,7 @@ public class ConnexionBdd{
         }     
         try {
             //obtention de la connexion
-            connection= DriverManager.getConnection("jdbc:mariadb://172.20.177.77:3306/23ELPJ","ADM_ELPJ","mpElpj");
+            connection= DriverManager.getConnection("jdbc:mariadb://localhost:3307/23ELPJ","root","");
             System.out.println("Connexion OK");
            
         } catch (SQLException e) {
