@@ -234,6 +234,7 @@ public class Frm_accueils extends javax.swing.JFrame {
     }//GEN-LAST:event_jlbl_ProfilActionPerformed
 
     private void jlbl_DécoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jlbl_DécoActionPerformed
+            setVisible(false);
             Frm_ConnexionUser frm_connexion = new Frm_ConnexionUser();
             frm_connexion.setVisible(true);
             System.out.println("Utilisateur déconnecté");

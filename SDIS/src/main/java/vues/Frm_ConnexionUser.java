@@ -130,12 +130,22 @@ public class Frm_ConnexionUser extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         Pompier p = DAO.ConnexionUserDAO.getLogin(cnx, jlbl_Username.getText(), jlbl_mdp.getText());
-        
+
         if (p != null){
+            if (p.getRole().equals("P")){
+                setVisible(false);
+                Frm_accueils frm_accueils = new Frm_accueils(p);
+                frm_accueils.setVisible(true);
+            }else if(p.getRole().equals("R")){
             setVisible(false);
-            Frm_accueils frm_accueils = new Frm_accueils(p);
-            frm_accueils.setVisible(true);
-        }else{
+            Frm_accueilresp frm_Accueilresp = new Frm_accueilresp(p);
+            frm_Accueilresp.setVisible(true);
+            }else if(p.getRole().equals("A")){
+            Frm_accueiladm frm_Accueiladm = new Frm_accueiladm(p);
+            frm_Accueiladm.setVisible(true);
+            }
+        }
+        else{
             jlbl_error.setText("Problemes sur les identifiants");
         }
         

@@ -37,6 +37,7 @@ public class PompierDAO {
             pom.setNom(rs.getString("POM_NOM"));
             pom.setPrenom(rs.getString("POM_Prenom"));
             pom.setDateNaissance(rs.getString("POM_DATENAISSANCE"));
+            pom.setRole(rs.getString("POM_role"));
             
             Caserne uneCaserne= new Caserne();
             uneCaserne.setCasNom(rs.getString("CAS_NOM"));
