@@ -14,6 +14,7 @@ import modele.Caserne;
 import modele.Grade;
 import modele.Intervention;
 import modele.Pompier;
+import modele.Situation;
 
 /**
  *
@@ -97,5 +98,36 @@ public class PompierDAO {
         }
         return mesIntervention;
      }
+    
+    public static int addIntervention(Connection cnt, Intervention i){
+         int resultatUpdate= -1;
+         try{
+             requete=cnt.prepareStatement("INSERT INTO intervention(INT_ID_DISPOSE,INT_DATE, INT_LIEU, INT_HEUREAPPEL, INT_HEUREARRIVE,INT_DUREE)VALUES (?,?,?,?,?,?)");
+             System.out.println("req=" + requete);
+            
+            requete.setInt(1,i.getSituation().getSituId());
+            requete.setString(2,i.getInterDate());
+            requete.setString(3,i.getInterLieu());
+            requete.setString(4,i.getInterHeureAppel());
+            requete.setString(5,i.getInterHeureArrive());
+            requete.setString(6,i.getInterDuree());
+            
+           
+            resultatUpdate = requete.executeUpdate();  
+            
+            ConnexionBdd.fermerConnexion(rs);
+            ConnexionBdd.fermerConnexion(requete);
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return resultatUpdate;
+        
+    }
+
+    
+       
+    }
+    
   
-}
+
